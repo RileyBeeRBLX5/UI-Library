@@ -16,6 +16,10 @@ local Window = Library:CreateWindow({
 	Logo = "rbxassetid://7733920644",
 });
 ```
+## Text Effect
+```lua
+local TextEffect = AcrylicLibrary.TextEffect;
+```
 
 ## Creating a Tab
 ```lua
