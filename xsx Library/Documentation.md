@@ -4,7 +4,7 @@ xsx is a open sourced Roblox UI library
 
 ## Booting Library
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RileyBeeRBLX4/UI-Library/refs/heads/main/xsx%20library/Library.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenGamer-Dev/UI-Library/refs/heads/main/xsx%20library/Library.lua"))()
 ```
 
 ## Features:
