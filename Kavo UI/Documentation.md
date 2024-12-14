@@ -1,96 +1,124 @@
-# HoHo Hub V1 UI
-This documentation is for HoHo Hub V1 UI Credit To acsu123
+# Kavo UI
+This documentation is for Kavo UI Credit To xHeptc
 
-## Booting the HoHo Hub V1 UI Library
+## Booting the Kavo UI Library
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/hoho_lib.lua", true))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 ```
 
 
 
 
-## Creating a HoHo Hub V1 UI Window
+## Creating a Kavo UI Window
 ```lua
-local Window = Library:Window("HoHo|Hub","Game",Color3.new(0.333333, 0.666667, 1))
+local Window = Library.CreateLib("TITLE", "DarkTheme")
 ```
 
 ## Creating a Tab
 ```lua
-local Tab = Window:Tab("Main")
+local Tab = Window:NewTab("TabName")
 ```
 
-## Creating a Label (For The Label Function)
+## Creating a Section
 ```lua
-local Label = Tab:Label("Label", properties) --properties: {["Visible"] = false}
+local Section = Tab:NewSection("Section Name")
 ```
 
-## Creating a label
+## Creating a Label
 ```lua
-Label:NewLabel("Section", properties)
-```
-
-## Creating a Line
-```lua
-Tab:Line()
+Section:NewLabel("LabelText")
 ```
 
 ## Creating a Button
 ```lua
-Tab:Button("Button", function()
-— Your Script Here
+Section:NewButton("ButtonText", "ButtonInfo", function()
+    print("Clicked")
 end)
 ```
 
 ## Creating a Toggle
 ```lua
-local Toggle = Tab:Toggle("Toggle", false, function()
-— Your Script Here
-end) 
+Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
 ```
-
-## Toggle Text
-```lua
-Toggle:NewText("Walk on Water")
-```
-
-## Toggle State
-```lua
-Toggle:NewState(true)
-```
-Can be set to true or false
 
 ## Creating a Slider
 ```lua
-local Slider = Tab:Slider("Slider",1,100,30,function()
-print(hi)
+Section:NewSlider("SliderText", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+```
+
+## Creating a Textbox
+```lua
+Section:NewTextBox("TextboxText", "TextboxInfo", function(txt)
+	print(txt)
+end)
+```
+
+## Creating a Keybind
+```lua
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	print("You just clicked the bind")
+end)
+```
+
+## Creating a Keybind For Toggling UI
+```lua
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
 end)
 ```
 
 ## Creating a Dropdown
 ```lua
-local Dropdown = Tab:Dropdown("Dropdown", {"1", 2, 3}, function(hi)
-print(hi)
+Section:NewDropdown("DropdownText", "DropdownInf", {"Option 1", "Option 2", "Option 3"}, function(currentOption)
+    print(currentOption)
 end)
 ```
 
-## Dropdown Text
+## Creating a Colorpicker
 ```lua
-Dropdown:NewText("Drop New 2")
-```
-
-## New Dropdown
-```lua
-Dropdown:NewDrop({Option 1,'Option 2',"Option 3"})
-```
-
-## Creating a Textbox
-```lua
-local Textbox = Tab:Textbox("Textbox","Textbox",function()
-print(hi)
+Section:NewColorPicker("Color Text", "Color Info", Color3.fromRGB(0,0,0), function(color)
+    print(color)
+    -- Second argument is the default color
 end)
 ```
+# Applying Custom Themes / Colors
 
-## Creating a Notification
+**Make new table, here you are going to put your colors, as shown below.**
+
 ```lua
-Library:Nof("notification",3)
+local colors = {
+    SchemeColor = Color3.fromRGB(0,255,255),
+    Background = Color3.fromRGB(0, 0, 0),
+    Header = Color3.fromRGB(0, 0, 0),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+```
+
+**Applying it: Change your window code little bit.**
+
+```lua
+local Window = Library.CreateLib("TITLE", colors)
+```
+
+# Want to add fully customizable UI?
+
+**Add this code in your section. This will create color pickers.**
+
+**Make sure you have added table with all the values of UI. then apply it to window. Like shown above.**
+
+```lua
+for theme, color in pairs(themes) do
+    Section:NewColorPicker(theme, "Change your "..theme, color, function(color3)
+        Library:ChangeColor(theme, color3)
+    end)
+end
 ```
