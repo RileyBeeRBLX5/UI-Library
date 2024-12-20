@@ -46,6 +46,18 @@ local redzlib = {
       ["Color Text"] = Color3.fromRGB(240, 240, 240),
       ["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
     },
+    Blue = {
+    ["Color Hub 1"] = ColorSequence.new({
+        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(25, 25, 75)),
+        ColorSequenceKeypoint.new(0.50, Color3.fromRGB(30, 30, 100)),
+        ColorSequenceKeypoint.new(1.00, Color3.fromRGB(25, 25, 75))
+    }),
+    ["Color Hub 2"] = Color3.fromRGB(20, 20, 60),
+    ["Color Stroke"] = Color3.fromRGB(30, 30, 90),
+    ["Color Theme"] = Color3.fromRGB(0, 100, 255),
+    ["Color Text"] = Color3.fromRGB(220, 220, 255),
+    ["Color Dark Text"] = Color3.fromRGB(140, 140, 200)
+  },
     Green = {
       ["Color Hub 1"] = ColorSequence.new({
         ColorSequenceKeypoint.new(0.00, Color3.fromRGB(19, 97, 61)),
@@ -75,7 +87,7 @@ local redzlib = {
   Options = {},
   Flags = {},
   Tabs = {},
-  Icons = loadstring(game:HttpGet("https://raw.githubusercontent.com/Raelhub/Rael-hub-function/refs/heads/main/RedzLibaryVersionRaelHub/Icons.lua"))()
+  Icons = loadstring(game:HttpGet("https://raw.githubusercontent.com/RileyBeeRBLX5/UI-Library/refs/heads/main/REDz%20UI%20V5/Icons.lua"))()
 }
 
 local ViewportSize = workspace.CurrentCamera.ViewportSize
