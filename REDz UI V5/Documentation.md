@@ -3,7 +3,7 @@ This documentation is for Redz UI V5 Credit To REDzHub
 
 ## Booting the Redz UI V5 Library
 ```lua
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/RileyBeeRBLX5/UI-Library/refs/heads/main/REDz%20UI%20V5/Library.lua"))()
 ```
 
 
