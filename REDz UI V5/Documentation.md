@@ -18,9 +18,24 @@ local Window = redzlib:MakeWindow({
 })
 ```
 
+## Creating a Minimize Button
+```lua
+Window:AddMinimizeButton({
+  Button = { Image = redzlib:GetIcon("rbxassetid://"),
+    Size = UDim2.fromOffset(60, 60),
+    BackgroundTransparency = 0 },
+  Corner = { CornerRadius = UDim.new(0, 6) }
+})
+```
+
 ## Creating a Tab
 ```lua
 local Tab = Window:MakeTab({"Example", "home"})
+```
+
+## Creating a Section
+```lua
+local Section = Tab:AddSection({"Section"})
 ```
 
 ## Creating a Button
@@ -50,11 +65,6 @@ local Toggle = Tab:AddToggle({
   print("hello")
   end
 })
-```
-
-## Creating a Section
-```lua
-local Section = Tab:AddSection({"Section"})
 ```
 
 ## Creating a Paragraph
