@@ -3,7 +3,7 @@ This documentation is for Blek UI Credit To The Owner
 
 ## Booting the Blek UI Library
 ```lua
-local BlekLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenGamer-Dev/UI-Library/main/Blek%20UI/Library.lua"))()
+local BlekLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/RileyBeeRBLX5/UI-Library/main/Blek%20UI/Library.lua"))()
 ```
 
 
