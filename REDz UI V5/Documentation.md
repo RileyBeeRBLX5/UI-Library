@@ -11,11 +11,7 @@ local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Riley
 
 ## Creating a Redz UI V5 Window
 ```lua
-local Window = redzlib:MakeWindow({
-  Title = "Test",
-  SubTitle = "hi",
-  SaveFolder = "Redz UI V5"
-})
+local Window = redzlib:MakeWindow({ Title = "Test", SubTitle = "hi",SaveFolder = "Redz UI V5" })
 ```
 
 ## Creating a Minimize Button
