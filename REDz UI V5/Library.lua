@@ -747,7 +747,7 @@ function redzlib:MakeWindow(Configs)
   
   ConnectSave(ControlSize2, function()
     redzlib.Save.TabSize = MainScroll.Size.X.Offset
-    SaveJson("rael hub with redz library.json", redzlib.Save)
+    SaveJson("redzlibrary.json", redzlib.Save)
   end)
   
   local ButtonsFolder = Create("Folder", TopBar, {
