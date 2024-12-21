@@ -169,6 +169,11 @@ Tab:AddTextBox({
 })
 ```
 
+## Select Tab
+```lua
+Window:SelectTab(Tab)
+```
+
 ## Creating A Discord Invite
 ```lua
 Tab:AddDiscordInvite({
